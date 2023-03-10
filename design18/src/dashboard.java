@@ -6,6 +6,7 @@
 import internalPage.userpage;
 import java.awt.Color;
 import internalPages.*;
+import internalPages.dashBoardPage;
 /**
  *
  * @author SCC-PC06
@@ -51,6 +52,9 @@ public class dashboard extends javax.swing.JFrame {
 
         dashpane.setBackground(new java.awt.Color(102, 102, 102));
         dashpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dashpaneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 dashpaneMouseEntered(evt);
             }
@@ -232,6 +236,11 @@ public class dashboard extends javax.swing.JFrame {
     userpage up = new userpage();
     maindesktop.add(up).setVisible(true);
     }//GEN-LAST:event_userpaneMouseClicked
+
+    private void dashpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseClicked
+    dashBoardPage  dbp = new dashBoardPage();
+    maindesktop.add(dbp).setVisible(true);    
+    }//GEN-LAST:event_dashpaneMouseClicked
 
     /**
      * @param args the command line arguments
