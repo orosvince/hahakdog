@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import internalPage.userpage;
 import java.awt.Color;
+import internalPages.*;
 /**
  *
  * @author SCC-PC06
@@ -37,7 +39,7 @@ public class dashboard extends javax.swing.JFrame {
         reportspane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        maindesktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +85,9 @@ public class dashboard extends javax.swing.JFrame {
 
         userpane.setBackground(new java.awt.Color(102, 102, 102));
         userpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userpaneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 userpaneMouseEntered(evt);
             }
@@ -168,21 +173,21 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(header);
         header.setBounds(130, 0, 530, 50);
 
-        jDesktopPane1.setBackground(new java.awt.Color(204, 204, 204));
+        maindesktop.setBackground(new java.awt.Color(204, 204, 204));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout maindesktopLayout = new javax.swing.GroupLayout(maindesktop);
+        maindesktop.setLayout(maindesktopLayout);
+        maindesktopLayout.setHorizontalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 530, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        maindesktopLayout.setVerticalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 360, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jDesktopPane1);
-        jDesktopPane1.setBounds(130, 50, 530, 360);
+        jPanel1.add(maindesktop);
+        maindesktop.setBounds(130, 50, 530, 360);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,6 +228,11 @@ public class dashboard extends javax.swing.JFrame {
      reportspane.setBackground(navcolor);
     }//GEN-LAST:event_reportspaneMouseExited
 
+    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
+    userpage up = new userpage();
+    maindesktop.add(up).setVisible(true);
+    }//GEN-LAST:event_userpaneMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -261,11 +271,11 @@ public class dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dashpane;
     private javax.swing.JPanel header;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JDesktopPane maindesktop;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel reportspane;
     private javax.swing.JPanel userpane;

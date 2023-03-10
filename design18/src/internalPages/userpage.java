@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package internalPages;
+package internalPage;
+
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
@@ -16,6 +18,9 @@ public class userpage extends javax.swing.JInternalFrame {
      */
     public userpage() {
         initComponents();
+     this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
+    BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
+    bi.setNorthPane(null);
     }
 
     /**
