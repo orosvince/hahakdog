@@ -5,6 +5,11 @@
  */
 package internalPages;
 
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /**
  *
  * @author SCC-PC06
@@ -15,9 +20,14 @@ public class settingsPage extends javax.swing.JInternalFrame {
      * Creates new form settingsPage
      */
     public settingsPage() {
-        initComponents();
+        initComponents(); 
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
+    BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
+    bi.setNorthPane(null);
     }
-
+    Color navcolor = new Color(102,102,102);
+    Color headercolor = new Color(0,51,51);
+    Color bodycolor = new Color(204,204,204);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,6 +160,9 @@ public class settingsPage extends javax.swing.JInternalFrame {
 
         settings.setBackground(new java.awt.Color(0, 51, 51));
         settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 settingsMouseEntered(evt);
             }
@@ -196,6 +209,12 @@ public class settingsPage extends javax.swing.JInternalFrame {
     private void settingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseExited
         settings.setBackground(headercolor);
     }//GEN-LAST:event_settingsMouseExited
+
+    private void settingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseClicked
+    JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
+    mainFrame.dispose();
+    
+    }//GEN-LAST:event_settingsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
