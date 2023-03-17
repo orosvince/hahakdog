@@ -1,3 +1,11 @@
+
+import java.awt.BasicStroke;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,7 +24,20 @@ public class loginFormat extends javax.swing.JFrame {
     public loginFormat() {
         initComponents();
     }
-
+    Color hover = new Color(102,102,255);
+     Color defButton = new Color(102,102,102);
+     Border empty = BorderFactory.createEmptyBorder();
+     void buttonBorderAnimation(JPanel panel){
+     
+     panel.setBackground(hover);
+    panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+    panel.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(2.0f)));
+     }
+     void ButtonDefauColor (JPanel panel)
+     {
+     panel.setBackground(hover);
+     panel.setBorder(empty);
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,8 +58,11 @@ public class loginFormat extends javax.swing.JFrame {
         login = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        minimize = new javax.swing.JLabel();
+        close = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setLayout(null);
 
@@ -78,6 +102,14 @@ public class loginFormat extends javax.swing.JFrame {
         jPanel3.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, 50));
 
         cancel.setBackground(new java.awt.Color(102, 102, 102));
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelMouseExited(evt);
+            }
+        });
         cancel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -87,6 +119,17 @@ public class loginFormat extends javax.swing.JFrame {
         jPanel3.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 100, 30));
 
         login.setBackground(new java.awt.Color(102, 102, 102));
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginMouseExited(evt);
+            }
+        });
         login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -99,6 +142,21 @@ public class loginFormat extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("new user? Click here to register");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 340, -1));
+
+        minimize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimize.setText("—");
+        minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeMouseClicked(evt);
+            }
+        });
+        jPanel3.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 30, 20));
+
+        close.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        close.setText("x");
+        jPanel3.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 30, 20));
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(310, 0, 350, 420);
@@ -124,6 +182,38 @@ public class loginFormat extends javax.swing.JFrame {
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
+
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        // TODO add your handling code here:
+        dashboard dash = new dashboard();
+        dash.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_loginMouseClicked
+
+    private void loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseEntered
+        // TODO add your handling code here:
+        buttonBorderAnimation(login);
+    }//GEN-LAST:event_loginMouseEntered
+
+    private void loginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseExited
+        // TODO add your handling code here:
+       ButtonDefauColor(login);
+    }//GEN-LAST:event_loginMouseExited
+
+    private void cancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseEntered
+        // TODO add your handling code here:
+        buttonBorderAnimation(cancel);
+    }//GEN-LAST:event_cancelMouseEntered
+
+    private void cancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseExited
+        // TODO add your handling code here:
+        ButtonDefauColor(cancel);
+    }//GEN-LAST:event_cancelMouseExited
+
+    private void minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseClicked
+        // TODO add your handling code here:
+        setState();
+    }//GEN-LAST:event_minimizeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -162,6 +252,7 @@ public class loginFormat extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cancel;
+    private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -170,7 +261,12 @@ public class loginFormat extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel login;
+    private javax.swing.JLabel minimize;
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+
+    private void setState() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

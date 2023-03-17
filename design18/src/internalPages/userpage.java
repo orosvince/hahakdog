@@ -5,7 +5,14 @@
  */
 package internalPage;
 
+import config.dbconnector;
+import internalPages.Regestration;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -22,7 +29,17 @@ public class userpage extends javax.swing.JInternalFrame {
     BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
     bi.setNorthPane(null);
     }
-
+    
+    public void displaydata()
+    {
+        try{
+dbconnector dbc= new dbconnector();
+ResultSet rs= dbc.getData("SELECT*FROM tbl_students");
+student_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(SQLException ex){
+        System.out.println("Error Message");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,32 +50,93 @@ public class userpage extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        student_table = new javax.swing.JTable();
+        name = new javax.swing.JTextField();
+        gender = new javax.swing.JTextField();
+        address = new javax.swing.JTextField();
+        status = new javax.swing.JTextField();
+        age = new javax.swing.JTextField();
+        contacts = new javax.swing.JTextField();
+        save = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
-        jLabel1.setText("THIS IS USER PAGE");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 360, 30));
+        jScrollPane1.setViewportView(student_table);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 360, 330));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
+        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 150, 30));
+        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 30));
+
+        status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 150, 30));
+        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 150, 30));
+        jPanel1.add(contacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 30));
+
+        save.setText("save");
+        save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveMouseClicked(evt);
+            }
+        });
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusActionPerformed
+
+    private void saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_saveMouseClicked
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+        dbconnector dbc = new dbconnector();
+
+dbc.insertData("INSERT INTO tbl_customer (t_name, t_address, t_status, t_gender, t_age,t_contact) "
+
+                + "VALUES ('"+name.getText()+"', '"+address.getText()+"','"+gender.getText()+"','"+status.getText()+"','"+age.getText()+"','"+contacts.getText()+"')");
+
+        displaydata();
+    }//GEN-LAST:event_saveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField address;
+    private javax.swing.JTextField age;
+    private javax.swing.JTextField contacts;
+    private javax.swing.JTextField gender;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField name;
+    private javax.swing.JButton save;
+    private javax.swing.JTextField status;
+    private javax.swing.JTable student_table;
     // End of variables declaration//GEN-END:variables
 }

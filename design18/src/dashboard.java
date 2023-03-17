@@ -161,7 +161,7 @@ public class dashboard extends javax.swing.JFrame {
         navbar.add(reportspane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 130, 40));
 
         jPanel1.add(navbar);
-        navbar.setBounds(0, 0, 130, 420);
+        navbar.setBounds(0, 0, 130, 440);
 
         header.setBackground(new java.awt.Color(0, 51, 51));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -198,7 +198,7 @@ public class dashboard extends javax.swing.JFrame {
         header.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 50, 30));
 
         jPanel1.add(header);
-        header.setBounds(130, 0, 530, 50);
+        header.setBounds(130, 0, 570, 50);
 
         maindesktop.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -206,25 +206,25 @@ public class dashboard extends javax.swing.JFrame {
         maindesktop.setLayout(maindesktopLayout);
         maindesktopLayout.setHorizontalGroup(
             maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
         maindesktopLayout.setVerticalGroup(
             maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
 
         jPanel1.add(maindesktop);
-        maindesktop.setBounds(130, 50, 530, 360);
+        maindesktop.setBounds(130, 50, 570, 390);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
 
         pack();
