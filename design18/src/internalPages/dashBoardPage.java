@@ -25,7 +25,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
     bi.setNorthPane(null);
     }
     Color navcolor = new Color(102,102,102);
-    Color headercolor = new Color(0,51,51);
+    Color headercolor = new Color(102,102,102);
     Color bodycolor = new Color(204,204,204);
     
      
@@ -55,7 +55,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
@@ -64,14 +64,14 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 130, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 130, -1));
 
         jLabel1.setBackground(new java.awt.Color(102, 102, 102));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -87,7 +87,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageUser.setBackground(new java.awt.Color(0, 51, 51));
+        manageUser.setBackground(new java.awt.Color(102, 102, 102));
         manageUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageUserMouseEntered(evt);
@@ -107,7 +107,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(manageUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 140));
 
-        reports.setBackground(new java.awt.Color(0, 51, 51));
+        reports.setBackground(new java.awt.Color(102, 102, 102));
         reports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 reportsMouseEntered(evt);
@@ -127,7 +127,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 130, 140));
 
-        settings.setBackground(new java.awt.Color(0, 51, 51));
+        settings.setBackground(new java.awt.Color(102, 102, 102));
         settings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 settingsMouseEntered(evt);

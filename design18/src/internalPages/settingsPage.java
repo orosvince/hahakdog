@@ -8,6 +8,7 @@ package internalPages;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import internalPages.loginFormat;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -53,7 +54,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
         reports = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        settings = new javax.swing.JPanel();
+        logout = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -90,7 +91,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
                 .addGap(19, 19, 19))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, 130));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, 130));
 
         jLabel1.setBackground(new java.awt.Color(102, 102, 102));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -113,7 +114,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
         jLabel11.setText("EMAIL:USER@USER.EMAIL");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 250, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 170));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 170));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -156,32 +157,32 @@ public class settingsPage extends javax.swing.JInternalFrame {
         jLabel8.setText("REPORTS");
         reports.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
-        jPanel2.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 130, 140));
+        jPanel2.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 130, 140));
 
-        settings.setBackground(new java.awt.Color(0, 51, 51));
-        settings.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setBackground(new java.awt.Color(0, 51, 51));
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingsMouseClicked(evt);
+                logoutMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingsMouseEntered(evt);
+                logoutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingsMouseExited(evt);
+                logoutMouseExited(evt);
             }
         });
-        settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsFolder/icons8-log-out-100.png"))); // NOI18N
-        settings.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
+        logout.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel4.setText("LOGOUT");
-        settings.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 70, 20));
+        logout.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 70, 20));
 
-        jPanel2.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 130, 140));
+        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 130, 140));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 580, 190));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 590, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -202,19 +203,20 @@ public class settingsPage extends javax.swing.JInternalFrame {
         reports.setBackground(headercolor);
     }//GEN-LAST:event_reportsMouseExited
 
-    private void settingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseEntered
-        settings.setBackground(navcolor);
-    }//GEN-LAST:event_settingsMouseEntered
+    private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
+        logout.setBackground(navcolor);
+    }//GEN-LAST:event_logoutMouseEntered
 
-    private void settingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseExited
-        settings.setBackground(headercolor);
-    }//GEN-LAST:event_settingsMouseExited
+    private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
+        logout.setBackground(headercolor);
+    }//GEN-LAST:event_logoutMouseExited
 
-    private void settingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseClicked
-    JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+     JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
     mainFrame.dispose();
-    
-    }//GEN-LAST:event_settingsMouseClicked
+    loginFormat lf =new loginFormat();
+    lf.setVisible(true);
+    }//GEN-LAST:event_logoutMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -234,8 +236,8 @@ public class settingsPage extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel logout;
     private javax.swing.JPanel manageUser;
     private javax.swing.JPanel reports;
-    private javax.swing.JPanel settings;
     // End of variables declaration//GEN-END:variables
 }
