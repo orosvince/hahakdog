@@ -92,7 +92,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 130, 40));
+        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 130, 40));
 
         userpane.setBackground(new java.awt.Color(102, 102, 102));
         userpane.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,7 +129,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        navbar.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 130, 40));
+        navbar.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 130, 40));
 
         reportspane.setBackground(new java.awt.Color(102, 102, 102));
         reportspane.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,19 +151,19 @@ public class dashboard extends javax.swing.JFrame {
         reportspaneLayout.setHorizontalGroup(
             reportspaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(reportspaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         reportspaneLayout.setVerticalGroup(
             reportspaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reportspaneLayout.createSequentialGroup()
+            .addGroup(reportspaneLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        navbar.add(reportspane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 130, 40));
+        navbar.add(reportspane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 130, 40));
 
         account.setBackground(new java.awt.Color(102, 102, 102));
         account.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -200,10 +200,10 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        navbar.add(account, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 130, 40));
+        navbar.add(account, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 130, 40));
 
         jPanel1.add(navbar);
-        navbar.setBounds(0, 0, 130, 440);
+        navbar.setBounds(0, 0, 130, 430);
 
         header.setBackground(new java.awt.Color(102, 102, 102));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -216,7 +216,7 @@ public class dashboard extends javax.swing.JFrame {
                 closeMouseClicked(evt);
             }
         });
-        header.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 20));
+        header.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 30, 20));
 
         minimize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -226,10 +226,10 @@ public class dashboard extends javax.swing.JFrame {
                 minimizeMouseClicked(evt);
             }
         });
-        header.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 20));
+        header.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 30, 20));
 
         jPanel1.add(header);
-        header.setBounds(130, 0, 570, 30);
+        header.setBounds(130, 0, 650, 30);
 
         maindesktop.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -237,25 +237,25 @@ public class dashboard extends javax.swing.JFrame {
         maindesktop.setLayout(maindesktopLayout);
         maindesktopLayout.setHorizontalGroup(
             maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
         maindesktopLayout.setVerticalGroup(
             maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
 
         jPanel1.add(maindesktop);
-        maindesktop.setBounds(130, 30, 570, 410);
+        maindesktop.setBounds(130, 30, 650, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
 
         pack();

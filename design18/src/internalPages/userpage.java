@@ -7,6 +7,7 @@ package internalPage;
 
 import config.dbconnector;
 import internalPages.Regestration;
+import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
@@ -31,7 +32,12 @@ public class userpage extends javax.swing.JInternalFrame {
      this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
     BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
     bi.setNorthPane(null);
+    search.setOpaque(false);
+    search.setBackground(new Color(0,0,0,0));
     }
+    Color navcolor = new Color(102,102,102);
+    Color headercolor = new Color(102,102,102);
+    Color bodycolor = new Color(204,204,204);
     public void reset()
     {
        id.setText("");
@@ -67,18 +73,15 @@ student_table.setModel(DbUtils.resultSetToTableModel(rs));
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         student_table = new javax.swing.JTable();
-        name = new javax.swing.JTextField();
-        gender = new javax.swing.JTextField();
-        address = new javax.swing.JTextField();
-        status = new javax.swing.JTextField();
-        age = new javax.swing.JTextField();
-        contacts = new javax.swing.JTextField();
-        save = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        id = new javax.swing.JTextField();
+        add = new javax.swing.JButton();
+        search_button = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        search = new javax.swing.JTextField();
+        display = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,101 +93,137 @@ student_table.setModel(DbUtils.resultSetToTableModel(rs));
         });
         jScrollPane1.setViewportView(student_table);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 370, 350));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 650, 220));
 
-        name.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "NAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        name.setOpaque(false);
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, 40));
-
-        gender.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "GENDER", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        gender.setOpaque(false);
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, 40));
-
-        address.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "ADDRESS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        address.setOpaque(false);
-        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 40));
-
-        status.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "STATUS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        status.setOpaque(false);
-        status.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statusActionPerformed(evt);
-            }
-        });
-        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, 40));
-
-        age.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "AGE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        age.setOpaque(false);
-        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, 40));
-
-        contacts.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "CONTACTS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        contacts.setOpaque(false);
-        jPanel1.add(contacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 170, 40));
-
-        save.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        save.setText("SAVE");
-        save.addMouseListener(new java.awt.event.MouseAdapter() {
+        add.setBackground(new java.awt.Color(204, 204, 204));
+        add.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        add.setText("ADD");
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                saveMouseClicked(evt);
+                addMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
             }
         });
-        save.addActionListener(new java.awt.event.ActionListener() {
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
-        jPanel1.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 100, -1));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 80, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setText("DISPLAY");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        search_button.setBackground(new java.awt.Color(204, 204, 204));
+        search_button.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        search_button.setText("SEARCH");
+        search_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                search_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                search_buttonMouseExited(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 90, -1));
+        search_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_buttonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, 20));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setText("DELETE");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        delete.setBackground(new java.awt.Color(204, 204, 204));
+        delete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        delete.setText("DELETE");
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteMouseExited(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 90, -1));
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 80, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setText("CLEAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        clear.setBackground(new java.awt.Color(204, 204, 204));
+        clear.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        clear.setText("CLEAR");
+        clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearMouseExited(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 90, -1));
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 90, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton4.setText("UPDATE");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        update.setBackground(new java.awt.Color(204, 204, 204));
+        update.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        update.setText("UPDATE");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateMouseExited(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 80, -1));
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 80, -1));
 
-        id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        id.setOpaque(false);
-        id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel1.setText("STUDENTS");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 50));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 50));
+
+        search.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
+        search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        search.setOpaque(false);
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 180, 20));
+
+        display.setBackground(new java.awt.Color(204, 204, 204));
+        display.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        display.setText("DISPLAY");
+        display.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                displayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                displayMouseExited(evt);
             }
         });
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, 30));
+        display.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayActionPerformed(evt);
+            }
+        });
+        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,16 +233,12 @@ student_table.setModel(DbUtils.resultSetToTableModel(rs));
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_statusActionPerformed
-
-    private void saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveMouseClicked
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_saveMouseClicked
+    }//GEN-LAST:event_addMouseClicked
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
         dbconnector dbc = new dbconnector();
 
@@ -212,11 +247,11 @@ dbc.insertData("INSERT INTO tbl_students (student_id,student_name, student_adres
                 + "VALUES ('"+id.getText()+"','"+name.getText()+"', '"+address.getText()+"','"+gender.getText()+"','"+status.getText()+"','"+age.getText()+"','"+contacts.getText()+"')");
 
         displaydata();
-    }//GEN-LAST:event_saveActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_clearActionPerformed
 
     private void student_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_student_tableMouseClicked
         // TODO add your handling code here:
@@ -238,7 +273,7 @@ dbc.insertData("INSERT INTO tbl_students (student_id,student_name, student_adres
      
     }//GEN-LAST:event_student_tableMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         int rowIndex = student_table.getSelectedRow();
        
        
@@ -257,22 +292,22 @@ dbc.insertData("INSERT INTO tbl_students (student_id,student_name, student_adres
                     }    
        
        }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void search_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttonActionPerformed
         // TODO add your handling code here:
         displaydata();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_search_buttonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
        // FOR UPDATE BUTTON
 
         dbconnector dbc = new dbconnector();
         int num = dbc.updateData("UPDATE tbl_students "
                 + "SET Student_name = '"+name.getText()+"', student_adress='"+address.getText()+"', "
-                        + "student_gender ='"+status.getText()+"', student_status='"+gender.getText()+"', student_age='"+age.getText()+"'  "
+                        + "student_gender ='"+gender.getText()+"', student_status='"+status.getText()+"', student_age='"+age.getText()+"'  "
                                 + "WHERE student_id = '"+id.getText()+"'");
        
         if(num == 0){
@@ -283,28 +318,85 @@ dbc.insertData("INSERT INTO tbl_students (student_id,student_name, student_adres
            reset();
         }
     
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_updateActionPerformed
 
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
+    }//GEN-LAST:event_displayActionPerformed
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        // TODO add your handling code here:
+    add.setBackground(navcolor);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
+        // TODO add your handling code here:
+         update.setBackground(navcolor);
+    }//GEN-LAST:event_updateMouseEntered
+
+    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
+        // TODO add your handling code here:
+         delete.setBackground(navcolor);
+    }//GEN-LAST:event_deleteMouseEntered
+
+    private void clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseEntered
+        // TODO add your handling code here:
+         clear.setBackground(navcolor);
+    }//GEN-LAST:event_clearMouseEntered
+
+    private void displayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_displayMouseEntered
+        // TODO add your handling code here:
+         display.setBackground(navcolor);
+    }//GEN-LAST:event_displayMouseEntered
+
+    private void search_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_buttonMouseEntered
+        // TODO add your handling code here:
+         search_button.setBackground(navcolor);
+    }//GEN-LAST:event_search_buttonMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+        // TODO add your handling code here:
+         add.setBackground(bodycolor);
+    }//GEN-LAST:event_addMouseExited
+
+    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
+        // TODO add your handling code here:
+         update.setBackground(bodycolor);
+    }//GEN-LAST:event_updateMouseExited
+
+    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
+        // TODO add your handling code here:
+         delete.setBackground(bodycolor);
+    }//GEN-LAST:event_deleteMouseExited
+
+    private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
+        // TODO add your handling code here:
+         clear.setBackground(bodycolor);
+    }//GEN-LAST:event_clearMouseExited
+
+    private void displayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_displayMouseExited
+        // TODO add your handling code here:
+         display.setBackground(bodycolor);
+    }//GEN-LAST:event_displayMouseExited
+
+    private void search_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_buttonMouseExited
+        // TODO add your handling code here:
+         search_button.setBackground(bodycolor);
+    }//GEN-LAST:event_search_buttonMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField address;
-    private javax.swing.JTextField age;
-    private javax.swing.JTextField contacts;
-    private javax.swing.JTextField gender;
-    private javax.swing.JTextField id;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton add;
+    private javax.swing.JButton clear;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton display;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField name;
-    private javax.swing.JButton save;
-    private javax.swing.JTextField status;
+    private javax.swing.JTextField search;
+    private javax.swing.JButton search_button;
     private javax.swing.JTable student_table;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,7 +27,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
     bi.setNorthPane(null);
     }
     Color navcolor = new Color(102,102,102);
-    Color headercolor = new Color(0,51,51);
+    Color headercolor = new Color(102,102,102);
     Color bodycolor = new Color(204,204,204);
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,7 +60,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
@@ -119,7 +119,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageUser.setBackground(new java.awt.Color(0, 51, 51));
+        manageUser.setBackground(new java.awt.Color(102, 102, 102));
         manageUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageUserMouseEntered(evt);
@@ -139,7 +139,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(manageUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 140));
 
-        reports.setBackground(new java.awt.Color(0, 51, 51));
+        reports.setBackground(new java.awt.Color(102, 102, 102));
         reports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 reportsMouseEntered(evt);
@@ -159,7 +159,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 130, 140));
 
-        logout.setBackground(new java.awt.Color(0, 51, 51));
+        logout.setBackground(new java.awt.Color(102, 102, 102));
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutMouseClicked(evt);
@@ -182,13 +182,13 @@ public class settingsPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 130, 140));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 590, 220));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 590, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseEntered
-        manageUser.setBackground(navcolor);
+        manageUser.setBackground(bodycolor);
     }//GEN-LAST:event_manageUserMouseEntered
 
     private void manageUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseExited
@@ -196,7 +196,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_manageUserMouseExited
 
     private void reportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseEntered
-        reports.setBackground(navcolor);
+        reports.setBackground(bodycolor);
     }//GEN-LAST:event_reportsMouseEntered
 
     private void reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseExited
@@ -204,7 +204,7 @@ public class settingsPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_reportsMouseExited
 
     private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
-        logout.setBackground(navcolor);
+        logout.setBackground(bodycolor);
     }//GEN-LAST:event_logoutMouseEntered
 
     private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited

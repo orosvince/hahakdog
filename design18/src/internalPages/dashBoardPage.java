@@ -147,13 +147,13 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
 
         jPanel2.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 130, 140));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 580, 190));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 580, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseEntered
-   manageUser.setBackground(navcolor); 
+   manageUser.setBackground(bodycolor); 
     }//GEN-LAST:event_manageUserMouseEntered
 
     private void manageUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseExited
@@ -161,7 +161,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_manageUserMouseExited
 
     private void reportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseEntered
-    reports.setBackground(navcolor);
+    reports.setBackground(bodycolor);
     }//GEN-LAST:event_reportsMouseEntered
 
     private void reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseExited
@@ -169,7 +169,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_reportsMouseExited
 
     private void settingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseEntered
-    settings.setBackground(navcolor);
+    settings.setBackground(bodycolor);
     }//GEN-LAST:event_settingsMouseEntered
 
     private void settingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseExited
